@@ -83,12 +83,12 @@ const Account = ({ session }) => {
           </div>
           <div>
             <label htmlFor="website">Website</label>
-            <input
+            {/* <input
               id="website"
               type="url"
               value={website || ''}
               onChange={(e) => setWebsite(e.target.value)}
-            />
+            /> */}
           </div>
           <div>
             <button className="button primary block" disabled={loading}>
