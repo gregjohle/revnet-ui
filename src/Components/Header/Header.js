@@ -1,11 +1,12 @@
-export default function Header({session}) {
-    let isSessionActive = () => {
-        if (session){
+export default function Header(props) {
+    const { session } = props
+
+    let isSessionActive = (currentSession) => {
+        if (currentSession){
             return (
-                <div>
-                    <img/>
-                    <h1></h1>
-                    <div>
+                <div className="wrapper-header">
+                    <h1>Revere Network</h1>
+                    <div className="nav-wrapper">
                         <nav>
                             <ul>
                                 <li>
@@ -21,14 +22,18 @@ export default function Header({session}) {
                 </div>
             )
         }
-        else if(!session) {
+        else if(!currentSession) {
             return (
                 <div>
-                    <img/>
-                    <h1></h1>
+                    <h1>Revere Network</h1>
                 </div>
             )
         }
     }
 
+    return (
+        <>
+        {isSessionActive(session)}
+        </>
+    )
 }
