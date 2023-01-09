@@ -23,24 +23,12 @@ export default function App() {
     <div className="container" style={{ padding: '50px 0 100px 0' }}>
       <Header session={session} />
       <Routes>
-        <Route path={"/signup"}>
-
-        </Route>
-        <Route path={"/login"}>
-
-        </Route>
-        <Route path={"/home"}>
-
-        </Route>
-        <Route path={"/myprofile/"}>
-
-        </Route>
-        <Route path={"/profile"}>
-
-        </Route>
+        <Route path={"/signup"}/>
+        <Route path={"/login"} element={<Auth />} />
+        <Route path={"/myprofile/"}/>
+        <Route path={"/profile"}/>
+        <Route path={"/"}/>
       </Routes>
-        
-      {/* {!session ? <Auth /> : <Account key={session.user.id} session={session} />} */}
     </div>
   )
 }
