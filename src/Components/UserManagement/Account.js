@@ -4,8 +4,8 @@ import { supabase } from '../../Common/supabaseClient'
 const Account = ({ session }) => {
   const [loading, setLoading] = useState(true)
   const [username, setUsername] = useState(null)
-  const [website, setWebsite] = useState(null)
-  const [avatar_url, setAvatarUrl] = useState(null)
+  const [firstName, setFirstName] = useState(null)
+  const [lastName, setLastNam] = useState(null)
 
   useEffect(() => {
     getProfile()
@@ -28,8 +28,8 @@ const Account = ({ session }) => {
 
       if (data) {
         setUsername(data.username)
-        setWebsite(data.website)
-        setAvatarUrl(data.avatar_url)
+        setFirstName(data.firstName)
+        setLastNam(data.LastName)
       }
     } catch (error) {
       alert(error.message)
@@ -48,12 +48,12 @@ const Account = ({ session }) => {
       const updates = {
         id: user.id,
         username,
-        website,
-        avatar_url,
+        firstName,
+        lastName,
         updated_at: new Date(),
       }
 
-      let { error } = await supabase.from('profiles').upsert(updates)
+      let { error } = await supabase.from('users').upsert(updates)
 
       if (error) {
         throw error
@@ -83,12 +83,12 @@ const Account = ({ session }) => {
           </div>
           <div>
             <label htmlFor="website">Website</label>
-            <input
+            {/* <input
               id="website"
               type="url"
               value={website || ''}
               onChange={(e) => setWebsite(e.target.value)}
-            />
+            /> */}
           </div>
           <div>
             <button className="button primary block" disabled={loading}>

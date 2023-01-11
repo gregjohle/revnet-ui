@@ -3,16 +3,19 @@ import { supabase } from '../../Common/supabaseClient'
 
 export default function Auth() {
   const [loading, setLoading] = useState(false)
-  const [email, setEmail] = useState('')
+  const [userEmail, setEmail] = useState('')
+  const [userPassword, setPassword] = useState('')
 
   const handleLogin = async (e) => {
     e.preventDefault()
 
     try {
       setLoading(true)
-      const { error } = await supabase.auth.signInWithOtp({ email })
+      const { error } = await supabase.auth.signInWithPassword({ 
+        email: userEmail,
+        password: userPassword
+      })
       if (error) throw error
-      alert('Check your email for the login link!')
     } catch (error) {
       alert(error.error_description || error.message)
     } finally {
@@ -23,10 +26,9 @@ export default function Auth() {
   return (
     <div className="row flex-center flex">
       <div className="col-6 form-widget" aria-live="polite">
-        <h1 className="header">Supabase + React</h1>
-        <p className="description">Sign in via magic link with your email below</p>
+        <h2 className="header">Login</h2>
         {loading ? (
-          'Sending magic link...'
+          'Loading...'
         ) : (
           <form onSubmit={handleLogin}>
             <label htmlFor="email">Email</label>
@@ -35,11 +37,19 @@ export default function Auth() {
               className="inputField"
               type="email"
               placeholder="Your email"
-              value={email}
+              value={userEmail}
               onChange={(e) => setEmail(e.target.value)}
             />
+            <label htmlFor="password">Password</label>
+            <input
+              id="password"
+              className='inputField'
+              type='password'
+              value={userPassword}
+              onChange={(e) => setPassword(e.target.value)}
+            />
             <button className="button block" aria-live="polite">
-              Send magic link
+              Login
             </button>
           </form>
         )}
