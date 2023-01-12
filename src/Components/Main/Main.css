@@ -28,7 +28,7 @@ button {
     border-radius: 50px;
     padding: 1.5rem;
     border: 0;
-    font-family: 'marcellus';
+    font-family: 'Marcellus';
 }
 
 button.donate-button {
@@ -38,7 +38,7 @@ button.donate-button {
  
 div.donate h1 {
     color: #FCFCFC;
-    font-family: 'marcellus';
+    font-family: 'Marcellus';
 }
 
 div.description {
@@ -52,11 +52,11 @@ div.description {
 div.description p {
     width: 40%;
     text-align: center;
-    font-family: 'marcellus';
+    font-family: 'Marcellus';
 }
 
 div.description h1{
-    font-family: 'marcellus';
+    font-family: 'Marcellus';
 }
 
 div.subsplash {
@@ -70,7 +70,7 @@ div.subsplash {
 
 div.subsplash h1 {
     color: #FCFCFC;
-    font-family: 'marcellus';
+    font-family: 'Marcellus';
 }
 
 div.subsplash button {
@@ -101,11 +101,11 @@ div.youtube div.youtube-wrapper {
 
 div.youtube div.youtube-wrapper p {
     width: 75%;
-    font-family: 'marcellus';
+    font-family: 'Marcellus';
 }
 
 div.youtube div.youtube-wrapper h1 {
-    font-family: 'marcellus';
+    font-family: 'Marcellus';
 }
 
 div.youtube div.youtube-wrapper button {
@@ -142,5 +142,5 @@ footer div.links img {
 
 footer p {
     color: #FCFCFC;
-    font-family: 'marcellus';
+    font-family: 'Marcellus';
 }

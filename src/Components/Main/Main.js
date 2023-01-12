@@ -12,7 +12,7 @@ export default function Main() {
     useEffect(() => {
         WebFont.load({
             google: {
-                families: ['marcellus']
+                families: ['Marcellus']
             }
         })
     }, [])
