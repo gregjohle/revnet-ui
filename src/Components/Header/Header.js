@@ -1,4 +1,16 @@
+import WebFont from "webfontloader"
+import { useEffect } from "react"
+import './Header.css'
+
 export default function Header({ session }) {
+    useEffect(() => {
+        WebFont.load({
+            google: {
+                families: ['Marcellus']
+            }
+        })
+    }, [])
+
     let isSessionActive = (currentSession) => {
         if (!currentSession){
             return (
