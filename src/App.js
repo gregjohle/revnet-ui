@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { supabase } from './Common/supabaseClient'
 import { useEffect } from 'react'
-import {Routes, Route} from "react-router-dom"
-import Header from "./Components/Header/Header"
-import Auth from "./Components/UserManagement/Auth"
+import {Routes, Route} from 'react-router-dom'
+import Header from './Components/Header/Header'
+import Auth from './Components/UserManagement/Auth'
 import Account from './Components/UserManagement/Account'
+import Main from './Components/Main/Main'
 
 export default function App() {
   const [session, setSession] = useState(null)
@@ -20,14 +21,14 @@ export default function App() {
   }, [])
 
   return (
-    <div className="container" style={{ padding: '50px 0 100px 0' }}>
-      <Header session={session} />
+    <div className="container" style={{ padding: '0' }}>
       <Routes>
         <Route path={"/signup"}/>
         <Route path={"/login"} element={<Auth />} />
         <Route path={"/myprofile/"}/>
         <Route path={"/profile"}/>
-        <Route path={"/"}/>
+        <Route path={"/social"} element={<Header session={session} />} />
+        <Route path={"/"} element={<Main />}/>
       </Routes>
     </div>
   )
