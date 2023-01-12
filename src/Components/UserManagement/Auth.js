@@ -11,7 +11,7 @@ export default function Auth() {
 
     try {
       setLoading(true)
-      const { error } = await supabase.auth.signInWithPassword({ 
+      const { error } = await supabase.auth.signUp({ 
         email: userEmail,
         password: userPassword
       })
