@@ -1,3 +1,4 @@
+import WebFont from "webfontloader"
 import Logo from "../../Common/images/revnet-logo.png"
 import Revere from "../../Common/images/revere.png"
 import Instagram from "../../Common/images/instagram.png"
@@ -5,8 +6,17 @@ import Youtube from "../../Common/images/youtube.png"
 import Tiktok from "../../Common/images/tiktok.png"
 import Email from "../../Common/images/email.png"
 import "./Main.css"
+import { useEffect } from "react"
 
 export default function Main() {
+    useEffect(() => {
+        WebFont.load({
+            google: {
+                families: ['marcellus']
+            }
+        })
+    }, [])
+
     return (
         <div className="main-body">
             <header className="main-header">
