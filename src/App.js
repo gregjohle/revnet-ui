@@ -24,7 +24,12 @@ export default function App() {
     <div className="container" style={{ padding: '0' }}>
       <Routes>
         <Route path={"/signup"}/>
-        <Route path={"/login"} element={<Auth />} />
+        <Route path={"/login"} element={
+          <>
+            <Header session={session} />
+            <Auth />
+          </>
+        } />
         <Route path={"/myprofile/"}/>
         <Route path={"/profile"}/>
         <Route path={"/social"} element={<Header session={session} />} />
