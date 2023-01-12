@@ -23,7 +23,12 @@ export default function App() {
   return (
     <div className="container" style={{ padding: '0' }}>
       <Routes>
-        <Route path={"/signup"}/>
+        <Route path={"/signup"} element={
+          <>
+            <Header session={session} />
+            
+          </>
+        }/>
         <Route path={"/login"} element={
           <>
             <Header session={session} />
