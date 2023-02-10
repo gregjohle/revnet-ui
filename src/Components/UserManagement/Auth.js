@@ -8,11 +8,9 @@ export default function Auth() {
   const [userEmail, setEmail] = useState('')
   const [userPassword, setPassword] = useState('')
 
-  const handleLogin = async (e) => {
-    e.preventDefault()
-
+  const handleLogin = async () => {
+    setLoading(true)
     try {
-      setLoading(true)
       const { error } = await supabase.auth.signInWithPassword({ 
         email: userEmail,
         password: userPassword
@@ -29,9 +27,8 @@ export default function Auth() {
     if (loading === true) {
       return <Mosaic size={'large'} />
     } else {
-      return (<div className="login-wrapper" >
-      <h2 className="header">Login</h2>
-      <form onSubmit={handleLogin}>
+      return (
+      <div className="login-wrapper" >
         <label htmlFor="email">Email</label>
         <input
           id="email"
@@ -49,16 +46,16 @@ export default function Auth() {
           value={userPassword}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="login-button">
+        <button className="login-button" onClick={() => handleLogin()}>
           Login
         </button>
-      </form>
     </div>)
     }
   }
 
   return (
     <div className="login-container">
+      <h2 className="header">Login</h2>
       {setContent()}
     </div>
   )
