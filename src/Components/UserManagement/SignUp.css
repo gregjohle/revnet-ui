@@ -1,0 +1,59 @@
+div.signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #7a7a7a;
+    height: 35rem;
+}
+
+div.signup h2  {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+div.signup-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+div.form-stuff {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4rem;
+}
+
+div.signup div.signup-wrapper div.form-stuff label, 
+div.signup div.signup-wrapper div.form-stuff input {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1rem;
+}
+
+div.signup input {
+    width: 400px;
+}
+
+div.signup label {
+    color: white;
+}
+
+div.signup button {
+    border-radius: 50px;
+    margin-top: 3rem;
+    padding: 1rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0px;
+    background-color: black;
+}
+
+div.signup button:hover {
+    background-color: rgb(39, 39, 39);
+}
+
+div.signup button:active {
+    color: black;
+    background-color: white;
+}

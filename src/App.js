@@ -3,6 +3,7 @@ import { supabase } from './Common/supabaseClient'
 import { useEffect } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import Header from './Components/Header/Header'
+import Signup from './Components/UserManagement/SignUp'
 import Auth from './Components/UserManagement/Auth'
 import Account from './Components/UserManagement/Account'
 import Main from './Components/Main/Main'
@@ -23,7 +24,12 @@ export default function App() {
   return (
     <div className="container" style={{ padding: '0' }}>
       <Routes>
-        <Route path={"/signup"}/>
+        <Route path={"/signup"} element={
+          <>
+            <Header session={session} />
+            <Signup />
+          </>
+        }/>
         <Route path={"/login"} element={
           <>
             <Header session={session} />
