@@ -37,7 +37,7 @@ export default function SignUp() {
             try {
                 console.log('trying to signup')
                 setLoading(true)
-                const {error} = await supabase.auth.signInWithPassword({
+                const {error} = await supabase.auth.signUp({
                     email: userEmail,
                     password: userPassword
                 })
@@ -48,7 +48,7 @@ export default function SignUp() {
                 setLoading(false)
             }
         }
-        else if (userEmail == '' || passwordValid === false) {
+        else if (userEmail == '' || passwordValid == false) {
             alert('Must input an email and valid password')
         }
         
@@ -70,7 +70,7 @@ export default function SignUp() {
         const {value} = e.target
         const capsLetterCheck = /[A-Z]/.test(value)
         const numberCheck = /[0-9]/.test(value)
-        const pwdLengthCheck = value.length >= 8
+        const pwdLengthCheck = value.length >= 12
         const specialCharCheck = /[!@#$%^&*]/.test(value)
         setChecks({
             capsLetterCheck,
