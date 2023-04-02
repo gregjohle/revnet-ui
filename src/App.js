@@ -3,9 +3,9 @@ import { supabase } from './Common/supabaseClient'
 import { useEffect } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import Header from './Components/Header/Header'
-import Signup from './Components/UserManagement/SignUp'
-import Auth from './Components/UserManagement/Auth'
-import Account from './Components/UserManagement/Account'
+import Signup from './Components/UserManagement/SignUp/SignUp'
+import Auth from './Components/UserManagement/Auth/Auth'
+import Account from './Components/UserManagement/Account/Account'
 import Main from './Components/Main/Main'
 
 export default function App() {

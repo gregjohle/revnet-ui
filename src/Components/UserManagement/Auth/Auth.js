@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { supabase } from '../../Common/supabaseClient'
+import { supabase } from '../../../Common/supabaseClient'
 import { Mosaic } from 'react-loading-indicators'
 import './Auth.css'
 

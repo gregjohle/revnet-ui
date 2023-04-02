@@ -1,7 +1,7 @@
-import { supabase } from '../../Common/supabaseClient'
+import { supabase } from '../../../Common/supabaseClient'
 import { useState } from 'react'
 import './SignUp.css'
-import { PWDRequirements } from './PWDRequirements'
+import { PWDRequirements } from '../PasswordRequirements/PWDRequirements'
 import { Mosaic } from 'react-loading-indicators'
 
 export default function SignUp() {
