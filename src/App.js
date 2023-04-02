@@ -38,7 +38,11 @@ export default function App() {
         } />
         <Route path={"/myprofile/"}/>
         <Route path={"/profile"}/>
-        <Route path={"/social"} element={<Header session={session} />} />
+        <Route path={"/social"} element={
+          <>
+            <Header session={session} />
+          </>
+        } />
         <Route path={"/"} element={<Main />}/>
       </Routes>
     </div>
