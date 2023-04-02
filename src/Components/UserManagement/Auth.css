@@ -1,10 +1,15 @@
 div.login-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #7a7a7a;
     height: 35rem;
+}
+
+div.login-container h2.header {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 div.login-container div.login-wrapper {
@@ -14,3 +19,36 @@ div.login-container div.login-wrapper {
     align-items: center;
 }
 
+div.login-container div.login-wrapper label,
+div.login-container div.login-wrapper input {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1rem;
+}
+
+div.login-container div.login-wrapper input {
+    width: 400px;
+}
+
+div.login-container div.login-wrapper label {
+    color: white;
+}
+
+div.login-container div.login-wrapper button.login-button {
+    border-radius: 50px;
+    margin-top: 3rem;
+    padding: 1rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0px;
+    background-color: black;
+    width: 6rem;
+}
+
+div.login-container div.login-wrapper button.login-button:hover {
+    background-color: rgb(39, 39, 39);
+}
+
+div.login-container div.login-wrapper button.login-button:active {
+    color: black;
+    background-color: white;
+}

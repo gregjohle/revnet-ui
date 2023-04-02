@@ -11,7 +11,7 @@ export const PWDRequirements = ({ capsLetterFlag, numberFlag, lengthFlag, specia
             Must contain 1 number
         </p>
         <p className={lengthFlag}>
-            Must be at least 8 characters long
+            Must be at least 12 characters long
         </p>
         <p className={specialCharFlag}>
             Must contain 1 special character
