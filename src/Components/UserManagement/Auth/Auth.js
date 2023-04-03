@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { supabase } from '../../../Common/supabaseClient'
 import { Mosaic } from 'react-loading-indicators'
+import { useNavigate } from 'react-router-dom'
 import './Auth.css'
 
 export default function Auth() {
   const [loading, setLoading] = useState(false)
   const [userEmail, setEmail] = useState('')
   const [userPassword, setPassword] = useState('')
+  const navigate = useNavigate()
 
   const handleLogin = async () => {
     setLoading(true)
@@ -20,6 +22,7 @@ export default function Auth() {
       alert(error.error_description || error.message)
     } finally {
       setLoading(false)
+      navigate('/social')
     }
   }
 
@@ -46,9 +49,14 @@ export default function Auth() {
           value={userPassword}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="login-button" onClick={() => handleLogin()}>
-          Login
-        </button>
+        <div className='login-button-wrapper'>
+          <button className="login-button" onClick={() => navigate('/signup')}>
+            Sign Up
+          </button>
+          <button className="login-button" onClick={() => handleLogin()}>
+            Login
+          </button>
+        </div>
     </div>)
     }
   }
